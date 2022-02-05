@@ -96,7 +96,7 @@ def get_graph(country,value,case2,state_v):
     values =['World','High income', 'Europe','European Union','Asia','Upper middle income','North America', 'Lower middle income','South America','Africa']
     g3 = cases_data[cases_data.location.isin(values)==False]
     today = datetime.date.today()
-    yesterday = today - datetime.timedelta(days = 1)
+    yesterday = today - datetime.timedelta(days = 6)
 
     g3= g3[g3['date']==yesterday.strftime("%Y-%m-%d")].sort_values(by=case2,ascending=False).head(10)
     g3 = g3.iloc[::-1]
